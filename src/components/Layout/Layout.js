@@ -5,7 +5,7 @@ import classes from './Layout.css'
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 class Layout extends Component {
  state={
-     showSideDrawer:true
+     showSideDrawer:false
  }
     SideDrawerClosedHandler=()=>{
     this.setState({showSideDrawer:false})
@@ -14,10 +14,10 @@ class Layout extends Component {
     render(){
    return(
    <Aux>
-    <div><Toolbar/>
+    <Toolbar/>
     <SideDrawer
     open={this.state.showSideDrawer}
-    closed={this.SideDrawerClosedHandler}/> Backdrop</div>
+    closed={this.SideDrawerClosedHandler}/>
     <main className={classes.Content}>
         {this.props.children}
         </main>
